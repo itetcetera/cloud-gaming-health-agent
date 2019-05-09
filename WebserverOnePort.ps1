@@ -1,7 +1,7 @@
 ﻿
 
-# This is a super **SIMPLE** example of how to create a very basic powershell webserver
-# 2019-05-18 UPDATE — Created by me and and evalued by @jakobii and the comunity.
+# Based on https://gist.github.com/19WAS85/5424431
+
 
 # Http Server
 $http = [System.Net.HttpListener]::new() 
@@ -21,27 +21,22 @@ if ($http.IsListening) {
 }
 
 
-# INFINTE LOOP
-# Used to listen for requests
+
 while ($http.IsListening) {
 
 
 
-    # Get Request Url
-    # When a request is made in a web browser the GetContext() method will return a request object
-    # Our route examples below will use the request object properties to decide how to respond
+
     $context = $http.GetContext()
 
 
-    # ROUTE EXAMPLE 1
-    # http://127.0.0.1/
+
     if ($context.Request.HttpMethod -eq 'GET' -and $context.Request.RawUrl -eq '/health/') {
 
-        # We can log the request to the terminal
+
         write-host "$($context.Request.UserHostAddress)  =>  $($context.Request.Url)" -f 'mag'
 
-        # the html/data you want to send to the browser
-        # you could replace this with: [string]$html = Get-Content "C:\some\path\index.html" -Raw
+
         [string]$html = $(start-job -name Cloudhealth -ScriptBlock {
         
 
@@ -435,17 +430,6 @@ Remove-Item -Path C:\ParsecTemp\Busy.txt
 
         }
 
-
-    # ROUTE EXAMPLE 2
-    # http://127.0.0.1/some/form'
- 
-
-    # ROUTE EXAMPLE 3
-    # http://127.0.0.1/some/post'
-
-
-
-    # powershell will continue looping and listen for new requests...
 
 } 
 
