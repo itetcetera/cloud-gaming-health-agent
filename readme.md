@@ -26,7 +26,7 @@ This tool supports:
 
 ### OS:
 Server 2016  
-Server 2019 
+Server 2019  
 Win 10
  
 
