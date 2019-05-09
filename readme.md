@@ -14,7 +14,9 @@
                            ~Parsec Cloud Gaming Agent~
 
 This powershell webserver runs a powershell function that fetches a bunch of relevant information
-about your cloud machine.
+about your cloud machine.    
+
+There is no warranty given or implied, use this at your own risk 
 
 
 ### Instructions:                    
