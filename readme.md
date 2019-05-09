@@ -39,7 +39,7 @@ A. That's because the script takes ages to run
 Q. How do I change which IP source address is allowed to contact the webserver, and what port?
 
 
-A. Change line 10 of WebserverOnePort.ps1 and replace the star with the hostname or IP addreess of the source address, as well as change port :80 to whatever port you want.
+A. Change line 10 of WebserverOnePort.ps1 and replace the star with the hostname or IP address of the source address, as well as change port :80 to whatever port you want.
 
 
 
